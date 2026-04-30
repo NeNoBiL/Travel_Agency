@@ -1,0 +1,67 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Турагентство "Путешествие мечты"</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container navbar-content">
+                <div class="logo">
+                    <h1>✈️ Турагентство "Путешествие мечты"</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" id="home-link">Главная</a></li>
+                    <li><a href="#" id="tours-link">Туры</a></li>
+                    <li id="my-bookings-link" style="display:none;"><a href="#" id="bookings-link">Мои бронирования</a></li>
+                    <li id="admin-link" style="display:none;"><a href="admin.html">Админ панель</a></li>
+                    <li id="login-link"><a href="login.html">Вход</a></li>
+                    <li id="register-link"><a href="register.html">Регистрация</a></li>
+                    <li id="logout-link" style="display:none;"><a href="#" id="logout-btn">Выход</a></li>
+                </ul>
+                <div id="user-info" class="user-info"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <div class="container">
+                <h2>Откройте мир с нами!</h2>
+                <p>Лучшие туры по самым выгодным ценам</p>
+            </div>
+        </div>
+
+        <div class="container" id="tours-container">
+            <!-- Карточки туров будут загружены с помощью JavaScript -->
+        </div>
+    </main>
+
+    <!-- Модальное окно для бронирования -->
+    <div id="booking-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Бронирование тура</h2>
+            <div id="booking-tour-info"></div>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="participants">Количество участников:</label>
+                    <input type="number" id="participants" name="participants" min="1" max="10" required>
+                </div>
+                <div class="form-group">
+                    <label>Общая стоимость: <span id="total-price">0</span> ₽</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Подтвердить бронирование</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

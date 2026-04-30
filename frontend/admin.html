@@ -1,0 +1,105 @@
+<!-- frontend/admin.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель - Турагентство</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container navbar-content">
+                <div class="logo">
+                    <h1>✈️ Админ панель</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">На сайт</a></li>
+                    <li><a href="#" id="logout-admin">Выход</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="tours">Управление турами</button>
+                <button class="tab-btn" data-tab="bookings">Все бронирования</button>
+            </div>
+
+            <div id="tours-tab" class="tab-content active">
+                <div class="admin-header">
+                    <h2>Управление турами</h2>
+                    <button id="add-tour-btn" class="btn btn-primary">+ Добавить тур</button>
+                </div>
+                <div id="admin-tours-list"></div>
+            </div>
+
+            <div id="bookings-tab" class="tab-content">
+                <h2>Все бронирования</h2>
+                <div id="admin-bookings-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальное окно для добавления/редактирования тура -->
+    <div id="tour-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Добавить тур</h2>
+            <form id="tour-form">
+                <input type="hidden" id="tour-id">
+                <div class="form-group">
+                    <label for="title">Название тура:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Описание:</label>
+                    <textarea id="description" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Страна:</label>
+                        <input type="text" id="country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Город:</label>
+                        <input type="text" id="city" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="duration_days">Длительность (дней):</label>
+                        <input type="number" id="duration_days" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Цена (₽):</label>
+                        <input type="number" id="price" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="max_participants">Макс. участников:</label>
+                        <input type="number" id="max_participants" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="available_seats">Доступно мест:</label>
+                        <input type="number" id="available_seats" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">URL изображения:</label>
+                    <input type="url" id="image_url">
+                </div>
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
