@@ -102,7 +102,3 @@ INSERT INTO tours (title, description, country, city, duration_days, price, max_
 ('Путешествие по Осетии', 'Путешествие по Осетии.', 'Россия', 'Осетия', 5, 45000, 40, 27, 'https://islamnews.ru/wp-content/uploads/2024/01/23c107d8d9f16570cb4df6d2a6da0ac5.png'),
 ('Новый год в Лапландии', 'Сказочное новогоднее путешествие в резиденцию Деда Мороза. Катание на оленьих упряжках.', 'Финляндия', 'Рованиеми', 6, 95000, 25, 23, 'https://avatars.mds.yandex.net/i?id=babac44e48b22b9eb316349f750699a46e5279bb-5247746-images-thumbs&n=13'),
 ('Гастротур по Италии', 'Кулинарное путешествие по Италии с дегустацией вин и сыров. Мастер-классы от шеф-поваров.', 'Италия', 'Рим', 9, 110000, 20, 18, 'https://kompastour.com/useruploads/excurs/excurs_11eb791584.jpg');
-
-SELECT '✅ База данных создана!' as status;
-SELECT COUNT(*) as users_count FROM users;
-SELECT COUNT(*) as tours_count FROM tours;
